@@ -1,0 +1,185 @@
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.controls {
+  flex: 0 0 300px;
+  max-width: 300px;
+  margin-right: 20px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.simulation-section {
+  flex: 1 1 100%;
+  min-width: 600px;
+  margin-bottom: 20px;
+}
+
+#simulation-area {
+  width: 100%;
+  height: 500px; /* Increased height for bigger animation */
+  background-color: #2e2e2e;
+}
+
+.graph-section {
+  flex: 1 1 100%;
+}
+
+.graphs-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#energy-diagram, #graph-view {
+  flex: 1 1 48%;
+  background-color: #2e2e2e;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#energy-diagram h3, #graph-view h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.slider-container {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#metalSelect {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+#output p {
+  margin: 5px 0;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+.controls span {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+#frequencySlider {
+  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+  height: 10px;
+  border-radius: 5px;
+}
+
+#frequencySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#intensitySlider {
+  background-color: #555;
+  height: 10px;
+  border-radius: 5px;
+}
+
+#intensitySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .controls, .main-content {
+    flex: 1 1 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .simulation-section, .graph-section {
+    flex: 1 1 100%;
+    margin-left: 0;
+  }
+
+  .graphs-row {
+    flex-direction: row;
+  }
+
+  #energy-diagram, #graph-view {
+    flex: 1 1 48%;
+    margin-right: 2%;
+  }
+
+  #graph-view {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .graphs-row {
+    flex-direction: column;
+  }
+
+  #energy-diagram, #graph-view {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+}

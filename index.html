@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photoelectric Effect Simulation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Photoelectric Effect Simulation</h1>
+    <div class="content">
+      <div class="controls">
+        <!-- Controls content -->
+        <div class="slider-container">
+          <label for="frequencySlider">Light Frequency:</label>
+          <input type="range" id="frequencySlider" min="1" max="30" step="0.1" value="5">
+          <span id="frequencyValue">5.0</span> x 10<sup>14</sup> Hz
+        </div>
+        <div class="slider-container">
+          <label for="intensitySlider">Light Intensity:</label>
+          <input type="range" id="intensitySlider" min="1" max="10" step="1" value="5">
+          <span id="intensityValue">5</span> units
+        </div>
+        <label for="metalSelect">Select Material:</label>
+        <select id="metalSelect">
+          <option value="sodium">Sodium</option>
+          <option value="copper">Copper</option>
+          <option value="zinc">Zinc</option>
+          <option value="solarPanel">Solar Panel</option>
+        </select>
+        <div id="output">
+          <p>Work Function (&Phi;): <span id="workFunction">2.28</span> eV</p>
+          <p>Threshold Frequency (f<sub>0</sub>): <span id="thresholdFrequency">5.5</span> x10<sup>14</sup> Hz</p>
+          <p>Kinetic Energy of Electrons: <span id="kineticEnergy">0</span> eV</p>
+          <p>Electric Current Generated: <span id="currentValue">0</span> mA</p>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="simulation-section">
+          <div id="simulation-area"></div>
+        </div>
+        <div class="graph-section">
+          <div class="graphs-row">
+            <div id="energy-diagram">
+              <h3>Energy Diagram</h3>
+              <!-- Energy diagram canvas will be appended here by script.js -->
+            </div>
+            <div id="graph-view">
+              <h3>Frequency vs. Current Graph</h3>
+              <!-- Graph view canvas will be appended here by script.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Three.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Include OrbitControls for camera interaction -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <!-- Your custom JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
